@@ -1,0 +1,18 @@
+@model Backend3.Models.QuizModel
+
+@{
+    ViewData["Title"] = "Quiz";
+}
+
+<h2>Quiz</h2>
+
+<form method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <p>@Model.Expression =</p>
+    <input type="number" name="userAnswer" value="@Model.UserAnswer" />
+    <span asp-validation-for="UserAnswer" class="text-danger"></span>
+    <br />
+    <button type="submit">Next</button>
+</form>
+
+<a href="@Url.Action("QuizResult")">Finish</a>

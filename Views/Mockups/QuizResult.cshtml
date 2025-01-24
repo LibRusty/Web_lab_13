@@ -1,0 +1,14 @@
+@model List<Backend3.Models.QuizModel>
+
+<h2>Quiz Results</h2>
+
+<p>Right answers @ViewBag.CorrectAnswers out of @ViewBag.TotalQuestions</p>
+
+<ul>
+    @foreach (var question in Model)
+    {
+        <li>@question.Expression = @question.UserAnswer</li>
+    }
+</ul>
+
+<a href="@Url.Action("Quiz")">Start Again</a>
